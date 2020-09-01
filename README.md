@@ -17,7 +17,7 @@ OPTIONS (
   path "/mnt/davis/fire-calls/fire-calls-clean.parquet"
 )
 ```
-[show image of notebook showing describe]
+![histogram] (D:\github_portfolio\fireCalls\screenshots\Annotation 2020-09-01 161135.jpg)
 
 ```SQL
 DESCRIBE fireCallsClean
