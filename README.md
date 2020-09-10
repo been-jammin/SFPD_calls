@@ -1,6 +1,9 @@
 # SFPD_calls
 AI/ML exercises on calls/responses to the san francisco fire department based on UC davis course. the first part will closely follow the instructions given in the course lectures. then, i will divert and use some of my own code to go deeper and improve on the instructions given in the course
 
+## Introduction
+
+
 ## Data Extraction and Prep  (working alongside course instruction)
 first, we link to our data source. the data's source is https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3/data
 
