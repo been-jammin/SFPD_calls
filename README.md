@@ -10,7 +10,7 @@ this course, which was called "SQL for data science" was good, but a better name
 
 the course takes place entirely in a databricks notebook. so keep that in mind when reading some of the code below, especially the %magic% commands. 
 
-[screenshot of databricks notebook](databricks_env.jpg)
+![screenshot of databricks notebook](databricks_env.jpg)
 
 the source of the data is this: https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3/data
 the website has a great interface that allows you to interact with the data any way you want. but in the course, the instructors went ahead and downloaded some samples from this dataset (around 800k records) and converted it to a parquet file. a parquet file is an open source file format for Hadoop. Parquet stores nested data structures in a flat columnar format. Compared to a traditional approach where data is stored in row-oriented approach. this makes it more efficient to store and access, which is welcome for a dataset of 800k samples. the Databricks environment has a good set of tools to make this conversion. and this is the starting point of the analysis.
