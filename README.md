@@ -100,3 +100,4 @@ RMSE is 1.724841956799332
 ```
 and we can see that the RMSE of the prediction has improved...but not by very much. we can probably do better.
 
+![alt text](fireCallsSchema.jpg)
