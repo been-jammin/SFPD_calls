@@ -202,31 +202,31 @@ for i in range(len(cols_to_plot)):
 ```
 
 
-![png](output_24_0.png)
+![png](/screenshots/output_24_0.png)
 
 
 
-![png](output_24_1.png)
+![png](/screenshots/output_24_1.png)
 
 
 
-![png](output_24_2.png)
+![png](/screenshots/output_24_2.png)
 
 
 
-![png](output_24_3.png)
+![png](/screenshots/output_24_3.png)
 
 
 
-![png](output_24_4.png)
+![png](/screenshots/output_24_4.png)
 
 
 
-![png](output_24_5.png)
+![png](/screenshots/output_24_5.png)
 
 
 
-![png](output_24_6.png)
+![png](/screenshots/output_24_6.png)
 
 
 
@@ -1446,11 +1446,11 @@ plt.show()
 ```
 
 
-![png](output_84_0.png)
+![png](/screenshots/output_84_0.png)
 
 
 
-![png](output_84_1.png)
+![png](/screenshots/output_84_1.png)
 
 
 looks like no visible correlation, but let's try it anyway.
@@ -1758,7 +1758,7 @@ subset['response duration'].value_counts()
 
 
 
-![png](output_98_1.png)
+![png](/screenshots/output_98_1.png)
 
 
 that's a pretty unfriendly distribution. and implies that when the "investigation" unit is sent, response times can be quite long. but maybe that's because an "investigation" get dispatched to the same incident, alongside other, higher-priority units that can respond to incidents more quickly.
@@ -1781,7 +1781,7 @@ subset['response duration'].value_counts()
 
 
 
-![png](output_100_1.png)
+![png](/screenshots/output_100_1.png)
 
 
 this is another interesting connection. any unit types with the value "airport", all have zero as their response duration. this is probably because these units are responding to incidents at there airport, and there is a fire station inside the airport. pulling these out of the dataset would probably improve the model. but there are only 9 observations like this in a dataset of 100k observations. so it probably won't change at all.

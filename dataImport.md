@@ -439,7 +439,7 @@ plt.hist(results_df['response duration'], bins = 30)
 
 
 
-![png](output_22_2.png)
+![png](/screenshots/output_22_2.png)
 
 
 looks like a pretty skewed distribution, with most values between 0 and 20 minutes. and a few much longer. so let's do as the course does and only focus on the values between 0 and 15 minutes, assuming the others are outliers that will hurt more than help our model.
@@ -467,7 +467,7 @@ plt.hist(temp['response duration'], bins = 30)
 
 
 
-![png](output_24_1.png)
+![png](/screenshots/output_24_1.png)
 
 
 with this filtering applied, we now a very pretty distribution, with a healthy mean right around 3 minutes
