@@ -66,12 +66,12 @@ pdDF = sql("""SELECT timeDelay, Call_Type, Fire_Prevention_District, `Neighborho
 ```
 
 now that we have our data in a pandas dataframe, we can get familiar with it through visualizations, do some cleaning on it, and start our model. that work is done in the .ipynb notebook called "analysis.ipynb". so i encourge you to look at that notebook to continue following along. in that notebook, i do a little bit of following the course content, but the majority of it will diverge. see you there.
-[data visualization, cleaning, and machine learning model development](analysis.ipynb)
+[data visualization, cleaning, and machine learning model development](analysis.md)
 
 ## alternate method of data import (using SodaPy)
 
 up until now, we have been following how the course imports the data, using a pre-made parquet file which exists in the databricks notebook that comes with the course. so ideally to operate on it, and to use the cluster resources that Databricks provides, we would have to do our analysis/model development in that notebook. but i am more comfortable doing that in an IDE (spyder is my choice). but that would mean i'd have to use my own PC's computing resources. there does exist a way to connect to a databricks notebook from a local IDE but unfortunately the functionality does not extend to the community edition of databricks. so i can't do that. also, my laptop specs and internet speeds are mediocre at best. so i don't want to download a csv from the source and work on that. luckily, the data hosted by dataSF.com has a convenient API we can use to interact with the data. it's called SODA and it has a python interface called Sodapy. take a look at the notebook dataImport.ipynb to see how i use SodaPy to get the same data as the parquet file provided by the course, but directly from the source to a pandas dataframe.
-[alternate data import using Sodapy](dataImport.ipynb)
+[alternate data import using Sodapy](dataImport.md)
 
 
 
