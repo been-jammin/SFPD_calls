@@ -250,8 +250,15 @@ y = dataset['response duration']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 
+i'll note something here. first, i tried using the standard lines of code for a one-hot encoder. but then i got erros when fitting the model because the training set and the test set had different numbers of columns. this is caused by feature labels showing up in the test set that didn't show up in the training set (or vice versa). some quick research on some machine learning forums revealed a few different solutions for this issue. but none that brought concepts together clearly. so i'll try here: lots of people said to encode the data as one big set before train/test split. but this will cause data leakage, because we can including information about our test set in the making of the model, which should only involve the training set. basically, we are tipping off to our model that there may be feature labels appearing later that we don't know about while training the model. 
 
+if there are more feature labels in training set than test set: 
+the sklearn one hot encoder has thought of this. basically, you can create a OHE and tell it what feature labels to expect. we can use that here. so basically we create a training encoder, fit it to the training data, and then extract the feature labels (which will be come the columns) from it. then we create a 2nd encoder (the test set encoder), and pass to it the expected columns we extracted from the training set encoder. this is a way of accounting for labels that *may* show up in unseen/new data (the test set), without explicitly telling the encoder or the model that they *will* be there.
 
+if there are more feature labels in the test set than training set:
+this is more indicative of what can happen in reality, when new data comes in with feature labels that the model didn't know about when it was created. the most robust thing to do here is to pass the handle_unkown = 'ignore' to the creation of the test set encoder. this will simply drop the feature new feature labels that the model didn't know about when it was created.
+
+these strategies ensure that the column counts always match, while not breaking any machine learning rules. i use this strategy later on with the ordinal encoder too. but we simply have to return the ordinal encoder form within the column_Transformer() object. but more on that later.
 
 ```python
 ohe_train = OneHotEncoder(handle_unknown = 'ignore')
@@ -361,7 +368,7 @@ print(Xtest_enc.shape)
     (19677, 107)
     
 
-in order to judge our model performance against a standard baseline, let's see how good our predictions might be if we just predicted the average response duration every time.
+alongside the course, in order to judge our model performance against a standard baseline, let's see how good our predictions might be if we just predicted the average response duration every time.
 
 
 ```python
@@ -570,7 +577,9 @@ scores, rmse_scores = fitPredictScore(models,Xtrain_enc, y_train, Xtest_enc, y_t
     
 
     fitting  ElasticNet(alpha=1)
-    
+ 
+# discussion of model scores
+ 
 here, i'll do a little bit of apologizing in advance. despite my best efforts, i cannot get the markdown rendering of this file in github to hide the formatting text that preceeds the displayed dataframe. i'm aware of the to_markdown() method in pandas to print it in plaintext with some makeshift tabular formatting, but i have experienced errors in my Pandas distribution that prevent me from upgrading to the version that includes this message. 
 so long story short, i'll use print() wherever possible, but for big dataframes that require scrolling, i'll simply render them, but with the unfortunate+unsightly formatting text preceding. hopefully that can be overlooked.
 
