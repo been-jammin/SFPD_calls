@@ -16,7 +16,7 @@ the ID for the "fire-department-calls-for-service" dataset is 'nuek-vuh3' whihc 
 
 ```python
 domain = 'data.sfgov.org'
-app_token = 'XXXXXXXXXX'
+app_token = 'rrmNGKZrjY8MyQ07z8MxjVxHs'
 ```
 
 
@@ -148,10 +148,8 @@ def jsonToDF(json_results):
 
 ```python
 results_df = jsonToDF(results) 
-results_df
+display(results_df)
 ```
-
-
 
 
 <div>
@@ -346,7 +344,6 @@ results_df
 </div>
 
 
-
 because we didn't specify it, pandas assumes string objects for all columns in the dataframe. so now let's explicitly tell it what data type each column should be
 
 
@@ -439,7 +436,7 @@ plt.hist(results_df['response duration'], bins = 30)
 
 
 
-![png](/screenshots/output_22_2.png)
+![png](output_22_2.png)
 
 
 looks like a pretty skewed distribution, with most values between 0 and 20 minutes. and a few much longer. so let's do as the course does and only focus on the values between 0 and 15 minutes, assuming the others are outliers that will hurt more than help our model.
@@ -467,7 +464,7 @@ plt.hist(temp['response duration'], bins = 30)
 
 
 
-![png](/screenshots/output_24_1.png)
+![png](output_24_1.png)
 
 
 with this filtering applied, we now a very pretty distribution, with a healthy mean right around 3 minutes
