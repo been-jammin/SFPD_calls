@@ -16,7 +16,7 @@ the ID for the "fire-department-calls-for-service" dataset is 'nuek-vuh3' whihc 
 
 ```python
 domain = 'data.sfgov.org'
-app_token = 'rrmNGKZrjY8MyQ07z8MxjVxHs'
+app_token = 'XXXXXXXXXX'
 ```
 
 
