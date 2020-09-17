@@ -8,7 +8,7 @@ this course, which was called "SQL for data science" was good, but a better name
 
 # data import ( parallel to course content)
 
-the course takes place entirely in a databricks notebook. so keep that in mind when reading some of the code below, especially the %magic% commands. 
+the course takes place entirely in a databricks notebook. so keep that in mind when reading some of the code below, especially the %magic commands. 
 
 ![screenshot of databricks notebook](screenshots/databricks_env.jpg)
 
