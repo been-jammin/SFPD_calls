@@ -571,7 +571,8 @@ scores, rmse_scores = fitPredictScore(models,Xtrain_enc, y_train, Xtest_enc, y_t
 
     fitting  ElasticNet(alpha=1)
     
-
+here, i'll do a little bit of apologizing in advance. despite my best efforts, i cannot get the markdown rendering of this file in github to hide the formatting text that preceeds the displayed dataframe. i'm aware of the to_markdown() method in pandas to print it in plaintext with some makeshift tabular formatting, but i have experienced errors in my Pandas distribution that prevent me from upgrading to the version that includes this message. 
+so long story short, i'll use print() wherever possible, but for big dataframes that require scrolling, i'll simply render them, but with the unfortunate+unsightly formatting text preceding. hopefully that can be overlooked.
 
 ```python
 scores.sort_values(by='score', ascending = False)
@@ -661,6 +662,9 @@ scores.sort_values(by='score', ascending = False)
 
 
 ```python
+
+
+
 rmse_scores
 
 ```
